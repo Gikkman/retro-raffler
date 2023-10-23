@@ -1,0 +1,12 @@
+{
+  "name": "@retro-raffler/electron",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "electron": "27.0.2",
+    "electron-builder": "^24.6.4"
+  }
+}

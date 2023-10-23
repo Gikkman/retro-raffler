@@ -1,0 +1,14 @@
+{
+  "name": "@retro-raffler/backend",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "nodemon -w src/ -w tests/ main.ts",
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1",
+    "ts-node": "^10.9.1",
+    "typescript-transform-paths": "^3.4.6"
+  }
+}

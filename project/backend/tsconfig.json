@@ -1,0 +1,27 @@
+{
+  "extends": "../tsconfig.json",
+
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "outDir": "../../_compile",
+
+    "lib": [
+      "ES2020"
+    ],
+
+    "paths": {
+      "@backend/*": ["./src/*"],
+      "@type/*": ["../types/*"],
+    },
+
+    "plugins": [
+      { "transform": "typescript-transform-paths" },
+      { "transform": "typescript-transform-paths", "afterDeclarations": true }
+    ],
+  },
+
+  "ts-node": {
+    "transpileOnly": true,
+    "require": [ "typescript-transform-paths/register" ],
+  },
+}
