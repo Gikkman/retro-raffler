@@ -9,4 +9,5 @@ node_modules
 
 # retro-raffler
 _compile
+_package
 *.tsbuildinfo

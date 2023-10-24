@@ -12,6 +12,12 @@
     },
     "directories": {
         "buildResources": "assets",
-        "output": "./_compile"
+        "output": "_package"
+    },
+    "files": [
+      "_compile"
+    ],
+    "extraMetadata": {
+      "main": "_electron/electron/main.js"
     }
 }

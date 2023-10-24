@@ -14,7 +14,8 @@
     "build:backend": "npm -w project/backend run build",
     "build:frontend": "npm -w project/frontend run build",
     "build:electron": "npm -w project/electron run build",
-    "start": "cd _compile; node backend/project/main.js",
+    "start": "cd _compile; node backend/main.js",
+    "electron": "electron _compile/electron/main.js",
     "package": "electron-builder build --config electron-builder.json"
   },
   "repository": {
