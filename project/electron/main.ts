@@ -1,6 +1,7 @@
 // Modules to control application life and create native browser window
 import { app, BrowserWindow } from 'electron';
 import path = require('node:path')
+import { Backend } from "@b/backend";
 
 function createWindow () {
   // Create the browser window.
@@ -13,7 +14,7 @@ function createWindow () {
   });
 
   // and load the index.html of the app.
-  mainWindow.loadFile('../frontend/index.html');
+  mainWindow.loadURL('http://127.0.0.1:8080/');
 
   // Open the DevTools.
   mainWindow.webContents.openDevTools();
@@ -22,7 +23,10 @@ function createWindow () {
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
-app.whenReady().then(() => {
+app.whenReady().then(async () => {
+  const backend = new Backend();
+  await backend.start();
+
   createWindow();
 
   app.on('activate', function () {

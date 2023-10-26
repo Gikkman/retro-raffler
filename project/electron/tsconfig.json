@@ -1,16 +1,16 @@
 {
   "extends": "../tsconfig.json",
-
   "compilerOptions": {
     "esModuleInterop": true,
-    "outDir": "../../_compile/electron",
-
-    "lib": [
-      "ES2020"
+    "outDir": "_compile",
+    "lib": [ "ES2020", "DOM" ],
+    "paths": {
+      "@/*": ["./src/*"],
+      "@b/*": ["../backend/src/*"],
+    },
+    "plugins": [
+      { "transform": "typescript-transform-paths" },
+      { "transform": "typescript-transform-paths", "afterDeclarations": true }
     ],
-  },
-
-  "ts-node": {
-    "transpileOnly": true,
   },
 }

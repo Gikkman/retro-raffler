@@ -1,5 +1,6 @@
-import { contextBridge, ipcRenderer } from 'electron';
+import { contextBridge } from 'electron';
 
-contextBridge.exposeInMainWorld('api', {
-  showDialog: (msg: string) => ipcRenderer.invoke('show-dialog', msg)
+contextBridge.exposeInMainWorld('versions', {
+  process: process,
 });
+

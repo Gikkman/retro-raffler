@@ -6,14 +6,18 @@
         "type": "node",
         "request": "launch",
 
-        "cwd": "${workspaceFolder}/src/backend",
+        "cwd": "${workspaceFolder}/project",
         "runtimeArgs": [
             "-r",
             "ts-node/register"
         ],
         "args": [
-            "src/main.ts"
-        ]
+            "backend/main.ts"
+        ],
+        "env": {
+          "TS_NODE_PROJECT": "backend/tsconfig.json"
+        },
+        "outputCapture": "std"
     }
     ]
 }

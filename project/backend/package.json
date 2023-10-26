@@ -4,11 +4,12 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "nodemon -w src/ -w tests/ main.ts",
-    "build": "tsc"
+    "build": "tsc -p tsconfig.build.json"
   },
   "devDependencies": {
     "nodemon": "^3.0.1",
     "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.2.0",
     "typescript-transform-paths": "^3.4.6"
   }
 }

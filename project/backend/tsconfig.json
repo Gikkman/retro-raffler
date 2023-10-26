@@ -5,23 +5,22 @@
     "esModuleInterop": true,
     "outDir": "../../_compile",
 
+    "declaration": true,
+    "sourceMap": true,
+    "declarationMap": true,
+
     "lib": [
       "ES2020"
     ],
 
     "paths": {
-      "@backend/*": ["./src/*"],
-      "@type/*": ["../types/*"],
+      "@/*": ["./src/*"],
+      "@t/*": ["../types/*"],
     },
-
-    "plugins": [
-      { "transform": "typescript-transform-paths" },
-      { "transform": "typescript-transform-paths", "afterDeclarations": true }
-    ],
   },
 
   "ts-node": {
     "transpileOnly": true,
-    "require": [ "typescript-transform-paths/register" ],
+    "require": [ "tsconfig-paths/register" ],
   },
 }

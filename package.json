@@ -15,8 +15,8 @@
     "build:frontend": "npm -w project/frontend run build",
     "build:electron": "npm -w project/electron run build",
     "start": "cd _compile; node backend/main.js",
-    "electron": "electron _compile/electron/main.js",
-    "package": "electron-builder build --config electron-builder.json"
+    "electron": "cd _compile; electron electron/main.js",
+    "package": "electron-builder build --config project/electron/electron-builder.config.js"
   },
   "repository": {
     "type": "git",
@@ -37,9 +37,15 @@
     "@typescript-eslint/eslint-plugin": "^6.7.5",
     "@typescript-eslint/parser": "^6.7.5",
     "concurrently": "^8.2.1",
+    "copyfiles": "^2.4.1",
     "eslint": "^8.50.0",
     "eslint-plugin-vue": "^9.17.0",
+    "rimraf": "^5.0.5",
     "ts-patch": "^3.0.2",
     "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "@fastify/static": "^6.11.2",
+    "fastify": "^4.24.3"
   }
 }

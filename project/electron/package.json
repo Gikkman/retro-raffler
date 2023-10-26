@@ -3,10 +3,11 @@
   "private": true,
   "version": "1.0.0",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc -p tsconfig.build.json && copyfiles -u 1 \"_compile/electron/*\" ../../_compile && rimraf _compile"
   },
   "devDependencies": {
     "electron": "27.0.2",
-    "electron-builder": "^24.6.4"
+    "electron-builder": "^24.6.4",
+    "typescript-transform-paths": "^3.4.6"
   }
 }
