@@ -1,0 +1,9 @@
+{
+  "name": "@retro-raffler/migrations",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "build": "copyfiles \"./*.sql\" ../../_compile/migrations",
+    "test":  "ts-node test.ts"
+  }
+}

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import { TYPE } from "@type/File";
+import { TYPE } from "@t/File";
 
 defineProps<{ msg: string }>();
 
@@ -15,7 +15,7 @@ const t: TYPE = {a: 2};
     <button type="button" @click="count++">count is {{ count }}</button>
     <p>
       Edit
-      <code>components/HelloWorld.vue</code> to test HMR: {{ t.a }}
+      <code>components/HelloWorld.vue</code> to test HMR! {{ t.a }}
     </p>
   </div>
 

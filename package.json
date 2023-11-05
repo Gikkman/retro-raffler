@@ -5,18 +5,25 @@
   "main": "_compile/electron/main.js",
   "private": true,
   "scripts": {
+    "new-migration": "node scripts/new-migration.js",
+    "--": "------------------------------------------------------------------------------------",
     "postinstall": "electron-builder install-app-deps",
     "prepare": "ts-patch install -s",
+    "---": "-----------------------------------------------------------------------------------",
     "dev": "concurrently npm:dev:*",
     "dev:backend": "npm -w project/backend run dev",
     "dev:frontend": "npm -w project/frontend run dev",
+    "----": "----------------------------------------------------------------------------------",
     "build": "concurrently npm:build:*",
     "build:backend": "npm -w project/backend run build",
     "build:frontend": "npm -w project/frontend run build",
     "build:electron": "npm -w project/electron run build",
+    "build:migrations": "npm -w project/migrations run build",
+    "package": "electron-builder build --config project/electron/electron-builder.config.js",
+    "-----": "---------------------------------------------------------------------------------",
     "start": "cd _compile; node backend/main.js",
     "electron": "cd _compile; electron electron/main.js",
-    "package": "electron-builder build --config project/electron/electron-builder.config.js"
+    "------": "--------------------------------------------------------------------------------"
   },
   "repository": {
     "type": "git",
@@ -31,7 +38,8 @@
   "workspaces": [
     "project/backend",
     "project/electron",
-    "project/frontend"
+    "project/frontend",
+    "project/migrations"
   ],
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^6.7.5",
@@ -45,7 +53,8 @@
     "typescript": "^5.2.2"
   },
   "dependencies": {
-    "@fastify/static": "^6.11.2",
+    "@fastify/static": "^6.12.0",
+    "better-sqlite3": "^9.0.0",
     "fastify": "^4.24.3"
   }
 }

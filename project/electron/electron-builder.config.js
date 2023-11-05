@@ -13,8 +13,8 @@ const baseUrl = relative(cwd, cwd);
 const hereUrl = relative(baseUrl, __dirname);
 process.chdir(cwd);
 
-const root = (s) => join(baseUrl, s);
-const here = (s) => join(hereUrl, s);
+const root = (...s) => join(baseUrl, ...s);
+const here = (...s) => join(hereUrl, ...s);
 
 /**
  * @type {import('electron-builder').Configuration}
@@ -44,7 +44,7 @@ const config = {
     main: root("_compile/electron/main.js")
   },
   extraResources: [
-    root("lua/*")
+    root("lua/*"),
   ]
 };
 

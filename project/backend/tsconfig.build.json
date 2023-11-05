@@ -2,6 +2,8 @@
   "extends": "./tsconfig.json",
 
   "compilerOptions": {
+    "declaration": false,
+    "declarationMap": false,
     "plugins": [
       { "transform": "typescript-transform-paths" },
       { "transform": "typescript-transform-paths", "afterDeclarations": true }

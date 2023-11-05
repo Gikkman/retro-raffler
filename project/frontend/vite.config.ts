@@ -8,7 +8,7 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "src"),
-      "@type": path.resolve(__dirname, "..", "type"),
+      "@t": path.resolve(__dirname, "..", "type"),
     },
   },
   build: {
@@ -17,11 +17,11 @@ export default defineConfig({
   },
   server: {
     proxy: {
-      "/api": "localhost:47911",
       "/ws": {
-        target: "localhost:47911",
+        target: "localhost:8080",
         ws: true
-      }
+      },
+      "^/(?!assets|node_modules|src|vite|ws|@).+$": "localhost:8080",
     }
   }
 });
