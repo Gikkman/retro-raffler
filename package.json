@@ -6,6 +6,7 @@
   "private": true,
   "scripts": {
     "new-migration": "node scripts/new-migration.js",
+    "test": "npm --workspaces --if-present test",
     "--": "------------------------------------------------------------------------------------",
     "postinstall": "electron-builder install-app-deps",
     "prepare": "ts-patch install -s",
