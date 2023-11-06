@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const fs = require('fs');
 const path = require('path');
+const {exec} = require('child_process');
 
 const name = process.argv[2];
 if(!name) {
@@ -34,8 +35,15 @@ DROP TABLE 'temp';
 `;
 try {
   console.info("Creating new migration file " + fileName);
-  fs.writeFileSync(path.join(__dirname, "..", "project", "migrations", fileName), contentTemplate);
+  const filepath = path.join(__dirname, "..", "project", "migrations", fileName);
+  fs.writeFileSync(filepath, contentTemplate);
   console.info("New migration file created");
+  exec("command -v code", (err) => {
+    if(err){
+      return;
+    }
+    exec("code " + filepath);
+  });
 }
 catch(err) {
   console.error("Error creating migration file");
