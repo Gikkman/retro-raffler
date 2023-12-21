@@ -1,6 +1,7 @@
-
+// @ts-check
 /* eslint-disable @typescript-eslint/no-var-requires */
 const { join, relative } = require("node:path");
+const setup = require("./electron-builder.setup");
 
 /**
  * This ain't pretty, but electron-builder has a strange quirk where it needs to be
@@ -8,12 +9,12 @@ const { join, relative } = require("node:path");
  * dependencies. And I don't want all electron-builder related stuff to be located
  * in the root of the project, or in the backend project.
  */
-const cwd = join(__dirname, "..", "..");
-const baseUrl = relative(cwd, cwd);
-const hereUrl = relative(baseUrl, __dirname);
+const projectRoot = join(__dirname, "..", "..");
+const cwd = setup(projectRoot);
+const hereUrl = relative(cwd, __dirname);
 process.chdir(cwd);
 
-const root = (...s) => join(baseUrl, ...s);
+const root = (...s) => join(projectRoot, ...s);
 const here = (...s) => join(hereUrl, ...s);
 
 /**

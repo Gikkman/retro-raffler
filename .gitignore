@@ -10,4 +10,7 @@ node_modules
 # retro-raffler
 _compile
 _package
+_temp
+_build
+_electron
 *.tsbuildinfo

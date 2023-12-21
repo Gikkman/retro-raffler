@@ -2,6 +2,6 @@
   "extends": "./tsconfig.json",
   "exclude": [
     "_compile",
-    "*.config.js"
+    "electron-builder.*.js"
   ]
 }

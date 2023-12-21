@@ -1,6 +1,6 @@
 import { SQLiteDatabase } from './database/db';
 import { migrate } from './database/migrate';
-const db = SQLiteDatabase.file("foobar.sqlite").setVerboseLogger(console.log).build();
+const db = SQLiteDatabase.inMemory().setVerboseLogger(console.log).build();
 migrate(db, {migrationsPath: __dirname + "/../../migrations"});
 
 
